@@ -1,5 +1,7 @@
 package com.example.charl.yhackapp_financialmanagement;
 
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void inputAccountNumber(View view) {
+        Intent intent = new Intent(this, BankAPI.class);
         EditText accountNumber = (EditText) findViewById(R.id.edit_message);
+
     }
 }

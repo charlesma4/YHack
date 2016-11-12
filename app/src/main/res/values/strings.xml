@@ -2,4 +2,5 @@
     <string name="app_name">YHackApp - Financial Management</string>
     <string name="edit_message">Routing number</string>
     <string name="button_send">Send</string>
+    <string name="welcome_message">Hi there! Please input routing number for financial plan :)</string>
 </resources>
