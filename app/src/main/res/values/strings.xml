@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YHackApp - Financial Management</string>
+    <string name="edit_message">Routing number</string>
+    <string name="button_send">Send</string>
 </resources>
