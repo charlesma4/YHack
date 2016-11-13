@@ -8,15 +8,28 @@ import android.view.View;
 import android.widget.EditText;
 import java.util.*;
 public class MainActivity extends AppCompatActivity {
-
+    public static final String EXTRA_MESSAGE = "com.example.YHack.MESSAGE";
+    public static int money;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void inputAccountNumber(View view) {
-        Intent intent = new Intent(this, BankAPI.class);
-        EditText accountNumber = (EditText) findViewById(R.id.edit_message);
+    public void sendAssets(View view) {
+        Intent intent = new Intent(this, FinancialInfo.class);
+        EditText input = (EditText) findViewById(R.id.editAssets);
+        int totalMoney = Integer.parseInt(input.getText().toString());
+        money=totalMoney;
+        intent.putExtra(EXTRA_MESSAGE,totalMoney);
+        startActivity(intent);
+    }
+    public void sendFoodExpenses(View view) {
+
+    }
+    public void sendGeneralCollegeExpenses(View view) {
+
+    }
+    public void sendOtherExpenses(View view) {
 
     }
 }
