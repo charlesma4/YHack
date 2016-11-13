@@ -36,20 +36,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:gravity="center_horizontal" >
-        <EditText android:id="@+id/editOtherExpenses"
-            android:layout_weight="2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="@string/editOtherExpenses" />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_gravity="top" >
         <EditText android:id="@+id/editIncome"
             android:layout_width="match_parent"

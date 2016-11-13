@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">YHackApp - Financial Management</string>
-    <string name="edit_message">Current Balance</string>
+    <string name="edit_message">Current Holdings</string>
     <string name="button_send">Send</string>
-    <string name="welcome_message">Hi there! Please input your financial holdings and expenses (weekly) for planning :)</string>
-    <string name="editCollegeExpenses">Food Expenses</string>
-    <string name="editOtherExpenses">Other Expenses</string>
+    <string name="welcome_message">Hi there! Please input your financial holdings, expenses, and income for planning :)</string>
+    <string name="editCollegeExpenses">Expenses (Weekly)</string>
     <string name="editIncome">Income (Biweekly)</string>
 </resources>

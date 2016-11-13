@@ -18,11 +18,11 @@ public class FinancialInfo extends AppCompatActivity {
         Intent intent = getIntent();
         int yourMoney = (intent.getIntExtra(MainActivity.EXTRA_MESSAGE1, 0));
         int collegeExpenses = (intent.getIntExtra(MainActivity.EXTRA_MESSAGE2,0));
-        int otherExpenses = (intent.getIntExtra(MainActivity.EXTRA_MESSAGE3,0));
         int income = (intent.getIntExtra(MainActivity.EXTRA_MESSAGE4,0));
-        double daysLeft = estimateTimeLeft(yourMoney,collegeExpenses,otherExpenses, income);
-        if(income/14>((collegeExpenses+otherExpenses)/7)) {
-            String message = "Your assets will increase to "+daysLeft+" after a month. Keep it up!";
+        double daysLeft = estimateTimeLeft(yourMoney,collegeExpenses, income);
+        if(income/14.0>=((collegeExpenses)/7.0)) {
+            String daysleft = String.format("%.2f",daysLeft);
+            String message = "Your assets will be approximately $"+daysleft+" after a month. Keep it up!";
             TextView textView = new TextView(this);
             textView.setTextSize(40);
             textView.setText(message);
@@ -30,7 +30,8 @@ public class FinancialInfo extends AppCompatActivity {
             layout.addView(textView);
         }
         else {
-            String message = "Your current situation will last "+daysLeft+" days.";
+            daysLeft = (int) daysLeft;
+            String message = "Your current situation will last approximately "+daysLeft+" days.";
             TextView textView = new TextView(this);
             textView.setTextSize(40);
             textView.setText(message);
@@ -39,20 +40,20 @@ public class FinancialInfo extends AppCompatActivity {
         }
     }
 
-    public static double estimateTimeLeft(int assets, int cexpenses, int oexpenses, int income) {
-        if(income/14>(cexpenses+oexpenses)/7) {
-            return assets + (income/14)*30 - ((cexpenses+oexpenses)/7)*30;
+    public static double estimateTimeLeft(int assets, int cexpenses, int income) {
+        if(income/14.0>=(cexpenses)/7.0) {
+            return assets + (income/14.0)*30.0 - ((cexpenses)/7.0)*30.0;
         }
-        double initial = assets/((cexpenses+oexpenses)/7);
-        double difference=11;
-        while(difference>10) {
+        double initial = assets/(cexpenses/7.0);
+        double difference=1;
+        while(difference>=1) {
             double previousAssets = assets;
-            double incomeMade = initial * (income / 14);
+            double incomeMade = initial * (income / 14.0);
             assets += incomeMade;
             difference = assets-previousAssets;
-            initial = difference;
+            initial = difference/((cexpenses)/7.0);
         }
-        return assets/((cexpenses+oexpenses)/7);
+        return assets/((cexpenses)/7.0);
     }
 
 }
