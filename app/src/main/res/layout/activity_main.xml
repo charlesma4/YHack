@@ -16,12 +16,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="@string/edit_message" />
-        <Button
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send"
-            android:onClick="sendAssets"/>
+
 
     </LinearLayout>
     <LinearLayout
@@ -35,12 +30,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="@string/editCollegeExpenses" />
-        <Button
-            android:layout_weight="10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send"
-            android:onClick="sendGeneralCollegeExpenses"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -54,13 +44,28 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="@string/editOtherExpenses" />
-        <Button
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send"
-            android:onClick="sendOtherExpenses"/>
 
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" >
+        <EditText android:id="@+id/editIncome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/editIncome" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/button_send"
+            android:onClick="sendFinancialInfo" />
     </LinearLayout>
 
     <LinearLayout
